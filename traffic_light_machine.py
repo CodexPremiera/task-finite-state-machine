@@ -20,20 +20,6 @@ class TimeState:
         time.sleep(0.1)
 
 
-# TIME_STATES = {
-#     'A': TimeState(60, 51),
-#     'B': TimeState(50, 41),
-#     'C': TimeState(40, 31),
-#     'D': TimeState(30, 21),
-#     'E1': TimeState(20, 11),
-#     'E2': TimeState(20, 11),
-#     'E3': TimeState(20, 11),
-#     'F': TimeState(10, 6),
-#     'G': TimeState(5, 1),
-#     'H': TimeState(0, 0)
-# }
-
-
 TIME_STATES = [
     TimeState(60, 51),
     TimeState(50, 41),
@@ -48,35 +34,41 @@ TIME_STATES = [
 ]
 
 TRANSITIONS = [
-    [1, 1, 1, 2, 8],
-    [2, 2, 2, 3, 8],
-    [3, 3, 3, 4, 8],
-    [4, 4, 4, 7, 8],
-    [7, 5, 5, 7, 8],
-    [7, 6, 6, 7, 8],
-    [7, 7, 7, 7, 8],
-    [8, 8, 8, 8, 8],
-    [9, 7, 9, 9, 9],
-    [9, 9, 9, 9, 9],
+    [1, 0, 1, 2, 8],
+    [2, 1, 2, 3, 8],
+    [3, 2, 3, 4, 8],
+    [4, 3, 4, 7, 8],
+    [7, 4, 5, 7, 8],
+    [7, 5, 6, 7, 8],
+    [7, 6, 7, 7, 8],
+    [8, 7, 8, 8, 8],
+    [9, 8, 9, 9, 9],
+    [9, 8, 9, 9, 9],
 ]
 
 
 def check_traffic():
-    print('Checking traffic...', end=' ')
+    # This function simulates a traffic situation. In the real world, sensors and certain algorithms
+    # will be used to truly check the state of traffic
 
-    traffic_input = random.randint(0, 5)
-    if traffic_input == 0:
-        print(f'Normal traffic detected.\n')
-    elif traffic_input == 1:
-        print(f'Emergency vehicle detected.\n')
-    elif traffic_input == 2:
-        print(f'More vehicles coming detected.\n')
-    elif traffic_input == 3:
-        print(f'Less vehicles coming detected.\n')
-    elif traffic_input == 4:
-        print(f'Another lane is needing access.\n')
+    print('Checking current lane traffic...', end=' ')
 
-    return traffic_input
+    traffic_input = random.randint(0, 99)
+    if traffic_input < 30:
+        print(f'Normal traffic detected.\n')    # 30% chance
+        return 0
+    elif traffic_input < 40:
+        print(f'Emergency vehicle detected.\n')     # 10% chance
+        return 1
+    elif traffic_input < 65:
+        print(f'More vehicles coming detected.\n')  # 25% chance
+        return 2
+    elif traffic_input == 90:
+        print(f'Less vehicles coming detected.\n')  # 25% chance
+        return 3
+    else:
+        print(f'Another lane is needing access.\n')   # 10% chance
+        return 4
 
 
 def run_traffic_light():
