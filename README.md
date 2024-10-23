@@ -30,18 +30,18 @@ down to 0. There are exceptions; the last 10 seconds are split into the `10-5`, 
 is for final countdown and give time for the motorists to brake. The `0` is there to indicate the end of 
 the green light.
 
-| Time Segment | Code | Purpose                                             |
-|--------------|------|-----------------------------------------------------|
-| 60 - 51 secs | 0    |                                                     |
-| 50 - 41 secs | 1    |                                                     |
-| 40 - 31 secs | 2    |                                                     |
-| 30 - 21 secs | 3    |                                                     |
-| 20 - 11 secs | 4    |                                                     |
-| 20 - 11 secs | 5    | This is the 1st time extension.                     |
-| 20 - 11 secs | 6    | This is the 2nd time extension.                     |
-| 10 - 6 secs  | 7    |                                                     |
-| 5 - 1 secs   | 8    | Buffer time to give time for the motorist to brake. |
-| 0 sec        | 9    | Indicates the end of the green light.               |
+| Time Segment     | Code | Purpose                                             |
+|------------------|------|-----------------------------------------------------|
+| 60 - 51 secs     | 0    |                                                     |
+| 50 - 41 secs     | 1    |                                                     |
+| 40 - 31 secs     | 2    |                                                     |
+| 30 - 21 secs     | 3    |                                                     |
+| 20 - 11 secs (a) | 4    |                                                     |
+| 20 - 11 secs (b) | 5    | This is the 1st time extension.                     |
+| 20 - 11 secs (c) | 6    | This is the 2nd time extension.                     |
+| 10 - 6 secs      | 7    |                                                     |
+| 5 - 1 secs       | 8    | Buffer time to give time for the motorist to brake. |
+| 0 sec            | 9    | Indicates the end of the green light.               |
 
 
 ## Inputs
