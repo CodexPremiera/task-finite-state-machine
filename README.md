@@ -6,9 +6,10 @@ The traffic light in this scenario will adapt to the situation of the traffic. A
 following rules:
 
 1. Traffic light countdown starts at 60 seconds. 
-2. The final 5 seconds serves as safety allowance. No skipping and/or going back on time shall be done. 
-The exception for this is when the lane detects an emergency within the lane. 
-3. T-0 is the final state. No input can make the count skip or go back.
+2. The final 5 seconds serves as safety allowance. All force stops leads to here. No skipping and/or going back 
+on time shall be done at this point except when the lane detects an emergency within the lane. 
+3. T-0 is the final state. No input can make the count skip or go back except when the lane detects an 
+emergency within the lane.
 4. The traffic light checks the flow of the current traffic. It counts the volume of cars and checks for 
 out certain emergencies. On every ten seconds and at the final 5 seconds, it acts upon its assessment.
 5. If the amount of cars in the lane are reducing at an anticipated rate, the countdown proceeds as normal.
@@ -20,7 +21,7 @@ cars in the lane than anticipated. Hence, the countdown goes forward ten seconds
 go forward from t-minus 10 to 0.
 8. The countdown can only go back or move forward twice. 
 9. If an emergency vehicle is detected within the lane, it loops the countdown within the current segment 
-of ten seconds until the emergency vehicle has passed.
+of ten (or 5) seconds until the emergency vehicle has passed.
 10. If another lane needs to use the intersection, the lane will prepare to stop to give way for the other lane.
 
 
